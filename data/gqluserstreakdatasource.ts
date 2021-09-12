@@ -1,5 +1,7 @@
+import { JSONUserData } from "../data/restuserstreakmapper.ts";
+
 export class GqlUserStreakDataSource {
-  async getUserStreak(username: string): Promise<any> {
+  async getUserStreak(username: string): Promise<JSONUserData> {
     const token = Deno.env.get("GITHUB_PAT");
     const headers = {
       Authorization: `bearer ${token}`,
